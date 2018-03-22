@@ -26,10 +26,14 @@ proberen:
 proberen_time:
   sub   rsp, 0x8
   call  get_os_time
+  add   rsp, 0x8
   mov   r10, rax
 
-  jmp   proberen
+  sub   rsp, 0x8
+  call  proberen
+  add   rsp, 0x8
 
+  sub   rsp, 0x8
   call  get_os_time
   add   rsp, 0x8
 
