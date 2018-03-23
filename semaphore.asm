@@ -24,9 +24,15 @@ proberen:
   ret
 
 proberen_time:
+  push  rdi
+  push  rsi
+
   sub   rsp, 0x8
   call  get_os_time
   add   rsp, 0x8
+
+  pop   rsi
+  pop   rdi
   mov   r10, rax
 
   sub   rsp, 0x8
